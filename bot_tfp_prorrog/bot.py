@@ -7,13 +7,18 @@ class Bot(DesktopBot):
         """
         Execução principal
         """
-        reservas = []
+        # reservas = []
         observacao = pag.prompt("Observação")
         nova_data = pag.prompt("Data [dd/mm/aaaa]")
-        qtd_reservas = int(pag.prompt("Quantidade de reservas"))
+        # qtd_reservas = int(pag.prompt("Quantidade de reservas"))
 
-        for numero in range(0, qtd_reservas):
-            reservas.append(int(pag.prompt(f"{numero + 1}º Reserva")))
+        num_reservas = pag.prompt("Reservas")
+        reservas = num_reservas.split()
+        # print(reservas)
+        # reservas.append(int(num_reservas))
+        
+        # for numero in reservas:
+        #     print(numero)
 
         # Opens the TFP website.
         self.browse(
@@ -54,3 +59,4 @@ class Bot(DesktopBot):
 
 if __name__ == "__main__":
     Bot.main()
+# 
